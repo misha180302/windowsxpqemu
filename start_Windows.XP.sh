@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pkg install qemu-system-i386 -y && wget https://s36sas.storage.yandex.net/rdisk/8f63c1eb73645b5322aaa488fa11e86bc4cc88b13d5cdd330611b795ecc808ab/5f6b4237/9MuOyGS6dHR2i_G2UALdGcGsthGyKzp6K5sTigLkkwr9tigRb0cHt8Rj-khaXTnqfZSM-V8NVm_xxvo1oPePpA==?uid=0&filename=XP.vhd&disposition=attachment&hash=yrJZIuxxmOcMLKTQxgNkO%2Bx2daHRr4GjFUrM2m45m/4nfUolEUiNw3hk07QHxXdOq/J6bpmRyOJonT3VoXnDag%3D%3D&limit=0&content_type=application%2Foctet-stream&owner_uid=380752936&fsize=2959838720&hid=db0341f1bd7d347a47778436a1734cab&media_type=diskimage&tknv=v2&rtoken=68w4bHqgi4YS&force_default=no&ycrid=na-eb82f6e79478d0c85763b00a56bc9305-downloader15h&ts=5affa631bbbc0&s=8933adc4e2fdb249de8d0e6a8e02782f92f85e92f8e87a2c00223a47f517a824&pb=U2FsdGVkX18QCVF71H-gEYW8QMw69lnxEkcOVobe8PvE7ZSRW2O-bto4eWHDQy4oI3jnVvnsZeTWcIsZTqYwQR7kEK7z8ygKQBvzLVA1AJs
+
+qemu-system-i386 -m 1024 -hda XP.vhd -vga vmware -net user -net nic,model=rtl8139 -netdev user,id=net0,hostfwd=tcp::10023-:23 -usb -usbdevice tablet -vnc 127.0.0.1:1
